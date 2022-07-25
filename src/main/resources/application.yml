@@ -20,6 +20,18 @@ spring:
           predicates:
             - Path=/accounts/**
 
+        ## CREDIT SERVICE
+        - id: credit-service
+          uri: lb://ms-credits
+          predicates:
+            - Path=/credits/**
+
+        ## CREDIT CARDS SERVICE
+        - id: credit-cards-service
+          uri: lb://ms-credit-cards
+          predicates:
+            - Path=/credit-cards/**
+
 server:
   port: 8080
 
