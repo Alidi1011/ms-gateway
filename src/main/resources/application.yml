@@ -8,6 +8,18 @@ spring:
           enabled: true
           lowerCaseServiceId: true
 
+      routes:
+        ## CUSTOMER SERVICE
+        - id: customer-service
+          uri: lb://ms-customer
+          predicates:
+            - Path=/customers/**
+        ## ACCOUNT SERVICE
+        - id: account-service
+          uri: lb://ms-account
+          predicates:
+            - Path=/accounts/**
+
 server:
   port: 8080
 
