@@ -30,7 +30,7 @@ spring:
         - id: credit-cards-service
           uri: lb://ms-credit-cards
           predicates:
-            - Path=/credit-cards/
+            - Path=/credit-cards/**
 
         ## TRANSACTIONS SERVICE
         - id: transaction-service
